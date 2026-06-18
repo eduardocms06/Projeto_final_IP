@@ -1,1 +1,2 @@
-# Projeto_final_IP
+#1 
+Instale o OLLAMA
