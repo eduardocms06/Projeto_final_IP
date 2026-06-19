@@ -1,16 +1,14 @@
 {
-  "nome": "Elefante",
+  "nome": "Rinoceronte",
   "mamifero": true,
   "porte_grande": true,
-  "nada": true,
-  "vive_em_grupo": true,
-  "migra": true,
-  "tem_tromba": true,
+  "e_solitario": true,
+  "e_territorial": true,
+  "ataca_humanos": true,
   "tem_chifre": true,
   "cor_cinza": true,
   "e_herbivoro": true,
   "vive_africa": true,
   "vive_savana": true,
-  "em_extincao": true,
-  "usado_transporte": true
+  "em_extincao": true
 }

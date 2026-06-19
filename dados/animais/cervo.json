@@ -1,0 +1,17 @@
+{
+  "nome": "Cervo",
+  "mamifero": true,
+  "porte_medio": true,
+  "corre_rapido": true,
+  "salta": true,
+  "vive_em_grupo": true,
+  "e_agil": true,
+  "tem_chifre": true,
+  "tem_cauda_longa": false,
+  "cor_marrom": true,
+  "e_herbivoro": true,
+  "vive_america_norte": true,
+  "vive_europa": true,
+  "vive_asia": true,
+  "vive_floresta": true
+}

@@ -1,17 +1,17 @@
 {
-  "nome": "Raposa",
+  "nome": "Guaxinim",
   "mamifero": true,
   "porte_pequeno": true,
-  "corre_rapido": true,
-  "e_solitario": true,
+  "escala": true,
+  "nada": true,
   "e_noturno": true,
   "e_agil": true,
   "tem_pelo": true,
   "tem_cauda_peluda": true,
-  "tem_orelhas_grandes": true,
-  "tem_focinho_alongado": true,
-  "cor_laranja": true,
+  "tem_listras_ou_manchas": true,
+  "cor_cinza": true,
   "e_onivoro": true,
+  "vive_america_norte": true,
   "vive_floresta": true,
   "vive_zona_urbana": true
 }

@@ -1,0 +1,14 @@
+{
+  "nome": "Sapo",
+  "anfibio": true,
+  "porte_pequeno": true,
+  "salta": true,
+  "nada": true,
+  "e_noturno": true,
+  "tem_listras_ou_manchas": true,
+  "cor_colorida": true,
+  "e_carnivoro": true,
+  "vive_america_sul": true,
+  "vive_floresta": true,
+  "e_venenoso": true
+}

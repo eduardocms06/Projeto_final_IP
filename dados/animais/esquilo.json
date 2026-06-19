@@ -1,0 +1,19 @@
+{
+  "nome": "Esquilo",
+  "mamifero": true,
+  "roedor": true,
+  "porte_pequeno": true,
+  "escala": true,
+  "salta": true,
+  "e_agil": true,
+  "hiberna": true,
+  "tem_pelo": true,
+  "tem_cauda_peluda": true,
+  "cor_marrom": true,
+  "cor_cinza": true,
+  "e_onivoro": true,
+  "vive_america_norte": true,
+  "vive_floresta": true,
+  "vive_zona_urbana": true,
+  "come_nozes": true
+}

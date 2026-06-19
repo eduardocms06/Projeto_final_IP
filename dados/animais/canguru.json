@@ -1,0 +1,16 @@
+{
+  "nome": "Canguru",
+  "mamifero": true,
+  "porte_medio": true,
+  "salta": true,
+  "corre_rapido": true,
+  "consegue_pular_alto": true,
+  "vive_em_grupo": true,
+  "tem_pelo": true,
+  "tem_cauda_longa": true,
+  "cor_marrom": true,
+  "e_herbivoro": true,
+  "vive_oceania": true,
+  "vive_savana": true,
+  "carrega_filhotes_na_barriga": true
+}

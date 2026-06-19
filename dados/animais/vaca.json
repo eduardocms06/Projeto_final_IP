@@ -1,0 +1,17 @@
+{
+  "nome": "Vaca",
+  "mamifero": true,
+  "porte_grande": true,
+  "vive_em_grupo": true,
+  "e_domesticado": true,
+  "tem_pelo": true,
+  "tem_chifre": true,
+  "tem_casco_ou_carapaca": true,
+  "cor_preta": true,
+  "cor_branca": true,
+  "cor_marrom": true,
+  "e_herbivoro": true,
+  "vive_qlr_lugar": true,
+  "usado_alimentacao_humana": true,
+  "usado_transporte": true
+}

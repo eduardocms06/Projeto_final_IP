@@ -1,0 +1,18 @@
+{
+  "nome": "Rato",
+  "mamifero": true,
+  "roedor": true,
+  "porte_pequeno": true,
+  "corre_rapido": true,
+  "nada": true,
+  "e_agil": true,
+  "e_noturno": true,
+  "vive_em_grupo": true,
+  "tem_cauda_longa": true,
+  "tem_focinho_alongado": true,
+  "cor_cinza": true,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_qlr_lugar": true,
+  "vive_zona_urbana": true
+}

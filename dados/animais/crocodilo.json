@@ -1,0 +1,18 @@
+{
+  "nome": "Crocodilo",
+  "reptil": true,
+  "porte_grande": true,
+  "nada": true,
+  "e_solitario": true,
+  "e_territorial": true,
+  "ataca_humanos": true,
+  "tem_escamas": true,
+  "tem_cauda_longa": true,
+  "tem_presas_visiveis": true,
+  "cor_marrom": true,
+  "e_carnivoro": true,
+  "vive_africa": true,
+  "vive_asia": true,
+  "vive_oceania": true,
+  "vive_agua_doce": true
+}

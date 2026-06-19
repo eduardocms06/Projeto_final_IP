@@ -1,15 +1,16 @@
 {
-  "nome": "Girafa",
+  "nome": "Hiena",
   "mamifero": true,
-  "porte_grande": true,
+  "porte_medio": true,
   "corre_rapido": true,
   "vive_em_grupo": true,
-  "tem_chifre": true,
+  "e_noturno": true,
+  "tem_pelo": true,
   "tem_listras_ou_manchas": true,
-  "tem_cauda_longa": true,
+  "tem_presas_visiveis": true,
   "cor_marrom": true,
-  "e_herbivoro": true,
+  "e_carnivoro": true,
   "vive_africa": true,
   "vive_savana": true,
-  "pescoco_grande": true
+  "ri": true
 }

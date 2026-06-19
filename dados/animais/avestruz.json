@@ -1,0 +1,17 @@
+{
+  "nome": "Avestruz",
+  "ave": true,
+  "ovos": true,
+  "porte_grande": true,
+  "corre_rapido": true,
+  "voa": false,
+  "vive_em_grupo": true,
+  "tem_penas": true,
+  "tem_bico": true,
+  "tem_cauda_longa": false,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_africa": true,
+  "vive_savana": true,
+  "vive_deserto": true
+}

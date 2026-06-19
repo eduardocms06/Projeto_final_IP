@@ -1,16 +1,14 @@
 {
-  "nome": "Papagaio",
+  "nome": "Tucano",
   "ave": true,
   "ovos": true,
   "porte_pequeno": true,
   "voa": true,
   "vive_em_grupo": true,
-  "e_domesticado": true,
   "tem_penas": true,
   "tem_bico": true,
-  "cor_colorida": true,
-  "e_herbivoro": true,
+  "cor_preta": true,
+  "e_onivoro": true,
   "vive_america_sul": true,
-  "vive_floresta": true,
-  "e_animal_estimacao_comum": true
+  "vive_floresta": true
 }

@@ -1,16 +1,14 @@
 {
-  "nome": "Elefante",
+  "nome": "Hipopótamo",
   "mamifero": true,
   "porte_grande": true,
   "nada": true,
   "vive_em_grupo": true,
-  "migra": true,
-  "tem_tromba": true,
-  "tem_chifre": true,
+  "e_territorial": true,
+  "ataca_humanos": true,
   "cor_cinza": true,
   "e_herbivoro": true,
   "vive_africa": true,
-  "vive_savana": true,
-  "em_extincao": true,
-  "usado_transporte": true
+  "vive_agua_doce": true,
+  "vive_savana": true
 }

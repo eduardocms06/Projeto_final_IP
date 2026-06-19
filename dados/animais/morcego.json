@@ -1,38 +1,14 @@
 {
-    "nome": "Morcego",
-
-    "classe": "Mamifero",
-
-    "porte": "Pequeno",
-
-    "continente": "America do Sul",
-
-    "voa": true,
-    "nada": false,
-    "escala": true,
-
-    "tem_penas": false,
-    "tem_pelos": true,
-    "tem_escamas": false,
-    "tem_casco": false,
-    "tem_chifres": false,
-
-    "carnivoro": false,
-    "herbivoro": false,
-    "onivoro": true,
-
-    "aquatico": false,
-    "semiaquatico": false,
-    "terrestre": false,
-    "aereo": true,
-
-    "quatro_patas": false,
-
-    "domestico": false,
-    "selvagem": true,
-
-    "vive_em_grupo": true,
-    "predador": false,
-
-    "descricao": "Único mamífero capaz de voo verdadeiro."
+  "nome": "Morcego",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "voa": true,
+  "e_noturno": true,
+  "vive_em_grupo": true,
+  "hiberna": true,
+  "cor_preta": true,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_floresta": true,
+  "cego": true
 }

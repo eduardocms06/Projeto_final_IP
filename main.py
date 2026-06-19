@@ -22,9 +22,11 @@ while len(animais) > 1:
     print("\n==============================")
     print(f"Animais restantes: {len(animais)}")
     print("==============================")
-
-    for animal in animais:
-        print("-", animal["nome"])
+    
+    if len(animais) <= 10:
+        print("\nAnimais possíveis:")
+        for animal in animais:
+           print("-", animal["nome"])
 
     pergunta = melhor_pergunta(
         animais,

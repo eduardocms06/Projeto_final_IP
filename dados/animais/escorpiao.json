@@ -1,0 +1,14 @@
+{
+  "nome": "Escorpião",
+  "porte_pequeno": true,
+  "e_noturno": true,
+  "e_solitario": true,
+  "tem_cauda_longa": true,
+  "tem_garras_afiadas": true,
+  "tem_pincas": true,
+  "cor_marrom": true,
+  "cor_preta": true,
+  "e_carnivoro": true,
+  "vive_deserto": true,
+  "e_venenoso": true
+}

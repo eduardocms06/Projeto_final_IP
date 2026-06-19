@@ -1,18 +1,17 @@
 {
-  "nome": "Águia",
+  "nome": "Coruja",
   "ave": true,
   "ovos": true,
-  "porte_grande": true,
+  "porte_pequeno": true,
   "voa": true,
-  "migra": true,
-  "e_territorial": true,
+  "e_noturno": true,
+  "e_solitario": true,
   "e_agil": true,
   "tem_penas": true,
   "tem_bico": true,
   "tem_garras_afiadas": true,
+  "tem_orelhas_grandes": true,
   "cor_marrom": true,
   "e_carnivoro": true,
-  "vive_america_norte": true,
-  "vive_montanha": true,
-  "em_extincao": true
+  "vive_floresta": true
 }

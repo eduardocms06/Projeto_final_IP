@@ -1,0 +1,14 @@
+{
+  "nome": "Zebra",
+  "mamifero": true,
+  "porte_medio": true,
+  "corre_rapido": true,
+  "vive_em_grupo": true,
+  "tem_listras_ou_manchas": true,
+  "tem_cauda_peluda": true,
+  "cor_preta": true,
+  "cor_branca": true,
+  "e_herbivoro": true,
+  "vive_africa": true,
+  "vive_savana": true
+}

@@ -1,0 +1,13 @@
+{
+  "nome": "Baleia-azul",
+  "mamifero": true,
+  "porte_grande": true,
+  "nada": true,
+  "migra": true,
+  "vive_em_grupo": true,
+  "cor_cinza": true,
+  "cor_branca": true,
+  "e_carnivoro": true,
+  "em_extincao": true,
+  "maior_mamifero_aquatico": true
+}

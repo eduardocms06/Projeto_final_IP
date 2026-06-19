@@ -1,0 +1,17 @@
+{
+  "nome": "Macaco",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "escala": true,
+  "salta": true,
+  "vive_em_grupo": true,
+  "e_agil": true,
+  "tem_pelo": true,
+  "tem_cauda_longa": true,
+  "cor_marrom": true,
+  "cor_preta": true,
+  "e_onivoro": true,
+  "vive_america_sul": true,
+  "vive_floresta": true,
+  "inteligente": true
+}

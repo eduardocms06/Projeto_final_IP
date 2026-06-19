@@ -1,0 +1,12 @@
+{
+  "nome": "Porco",
+  "mamifero": true,
+  "porte_medio": true,
+  "vive_em_grupo": true,
+  "e_domesticado": true,
+  "desenho_animado": true,
+  "e_onivoro": true,
+  "vive_qlr_lugar": true,
+  "usado_alimentacao_humana": true
+  
+}

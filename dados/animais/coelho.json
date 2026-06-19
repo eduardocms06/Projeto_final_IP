@@ -1,41 +1,16 @@
 {
-    "nome": "Coelho",
-
-    "classe": "Mamifero",
-
-    "porte": "Pequeno",
-
-    "continente": "Europa",
-
-    "voa": false,
-    "nada": false,
-    "escala": false,
-
-    "tem_penas": false,
-    "tem_pelos": true,
-    "tem_escamas": false,
-    "tem_casco": false,
-    "tem_chifres": false,
-
-    "carnivoro": false,
-    "herbivoro": true,
-    "onivoro": false,
-
-    "aquatico": false,
-    "semiaquatico": false,
-    "terrestre": true,
-    "aereo": false,
-
-    "quatro_patas": true,
-
-    "domestico": true,
-    "selvagem": false,
-
-    "vive_em_grupo": true,
-    "predador": false,
-    "mamifero": true,
-    "pequeno": true,
-    "europa": true,
-
-    "descricao": "Mamífero herbívoro conhecido por suas orelhas longas."
+  "nome": "Coelho",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "salta": true,
+  "corre_rapido": true,
+  "e_agil": true,
+  "tem_pelo": true,
+  "tem_orelhas_grandes": true,
+  "cor_colorida": true,
+  "e_herbivoro": true,
+  "vive_america_norte": true,
+  "vive_europa": true,
+  "vive_zona_urbana": true,
+  "e_animal_estimacao_comum": true
 }

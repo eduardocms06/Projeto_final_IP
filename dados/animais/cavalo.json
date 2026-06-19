@@ -1,38 +1,20 @@
 {
-    "nome": "Cavalo",
-
-    "classe": "Mamifero",
-
-    "porte": "Grande",
-
-    "continente": "Asia",
-
-    "voa": false,
-    "nada": true,
-    "escala": false,
-
-    "tem_penas": false,
-    "tem_pelos": true,
-    "tem_escamas": false,
-    "tem_casco": true,
-    "tem_chifres": false,
-
-    "carnivoro": false,
-    "herbivoro": true,
-    "onivoro": false,
-
-    "aquatico": false,
-    "semiaquatico": false,
-    "terrestre": true,
-    "aereo": false,
-
-    "quatro_patas": true,
-
-    "domestico": true,
-    "selvagem": false,
-
-    "vive_em_grupo": true,
-    "predador": false,
-
-    "descricao": "Mamífero domesticado utilizado para transporte e esportes."
+  "nome": "Cavalo",
+  "mamifero": true,
+  "porte_grande": true,
+  "corre_rapido": true,
+  "vive_em_grupo": true,
+  "e_domesticado": true,
+  "tem_pelo": true,
+  "tem_cauda_peluda": true,
+  "cor_marrom": true,
+  "cor_preta": true,
+  "cor_branca": true,
+  "e_herbivoro": true,
+  "vive_america_norte": true,
+  "vive_america_sul": true,
+  "vive_europa": true,
+  "vive_asia": true,
+  "vive_savana": true,
+  "usado_transporte": true
 }

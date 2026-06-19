@@ -1,0 +1,12 @@
+{
+  "nome": "Pombo",
+  "ave": true,
+  "porte_pequeno": true,
+  "voa": true,
+  "vive_em_grupo": true,
+  "tem_penas": true,
+  "tem_bico": true,
+  "cor_cinza": true,
+  "e_herbivoro": true,
+  "vive_zona_urbana": true
+}
