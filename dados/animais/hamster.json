@@ -1,0 +1,13 @@
+{
+  "nome": "Hamster",
+  "mamifero": true,
+  "roedor": true,
+  "porte_pequeno": true,
+  "e_noturno": true,
+  "e_solitario": true,
+  "tem_pelo": true,
+  "cor_marrom": true,
+  "cor_branca": true,
+  "e_onivoro": true,
+  "e_animal_estimacao_comum": true
+}

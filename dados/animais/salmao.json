@@ -1,0 +1,15 @@
+{
+  "nome": "Salmão",
+  "peixe": true,
+  "porte_medio": true,
+  "nada": true,
+  "migra": true,
+  "vive_em_grupo": true,
+  "e_carnivoro": true,
+  "vive_america_norte": true,
+  "vive_europa": true,
+  "vive_asia": true,
+  "vive_agua_doce": true,
+  "vive_oceano": true,
+  "usado_alimentacao_humana": true
+}

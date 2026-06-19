@@ -1,39 +1,21 @@
 {
-    "nome": "Cachorro",
-
-    "classe": "Mamifero",
-
-    "porte": "Medio",
-
-    "continente": "Europa",
-
-    "voa": false,
-    "nada": true,
-    "escala": false,
-
-    "tem_penas": false,
-    "tem_pelos": true,
-    "tem_escamas": false,
-    "tem_casco": false,
-    "tem_chifres": false,
-
-    "carnivoro": false,
-    "herbivoro": false,
-    "onivoro": true,
-
-    "aquatico": false,
-    "semiaquatico": false,
-    "terrestre": true,
-    "aereo": false,
-
-    "quatro_patas": true,
-    "canideo": true,
-
-    "domestico": true,
-    "selvagem": false,
-
-    "vive_em_grupo": true,
-    "predador": false,
-
-    "descricao": "Mamífero domesticado conhecido como melhor amigo do homem."
+  "nome": "Cachorro",
+  "mamifero": true,
+  "canino": true,
+  "porte_medio": true,
+  "corre_rapido": true,
+  "nada": true,
+  "vive_em_grupo": true,
+  "e_agil": true,
+  "e_domesticado": true,
+  "tem_pelo": true,
+  "tem_cauda_peluda": true,
+  "tem_focinho_alongado": true,
+  "cor_marrom": true,
+  "cor_preta": true,
+  "cor_branca": true,
+  "e_onivoro": true,
+  "vive_qlr_lugar": true,
+  "vive_zona_urbana": true,
+  "e_animal_estimacao_comum": true
 }

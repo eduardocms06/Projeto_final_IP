@@ -1,0 +1,15 @@
+{
+  "nome": "Camaleão",
+  "reptil": true,
+  "porte_pequeno": true,
+  "escala": true,
+  "e_solitario": true,
+  "e_agil": true,
+  "tem_escamas": true,
+  "tem_cauda_longa": true,
+  "cor_mudavel": true,
+  "e_carnivoro": true,
+  "vive_africa": true,
+  "vive_asia": true,
+  "vive_floresta": true
+}

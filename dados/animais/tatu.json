@@ -1,0 +1,15 @@
+{
+  "nome": "Tatu",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "e_solitario": true,
+  "e_noturno": true,
+  "tem_casco_ou_carapaca": true,
+  "tem_garras_afiadas": true,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_america_sul": true,
+  "vive_america_norte": true,
+  "vive_floresta": true,
+  "vive_savana": true
+}

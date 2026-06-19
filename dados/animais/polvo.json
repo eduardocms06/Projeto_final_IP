@@ -1,0 +1,13 @@
+{
+  "nome": "Polvo",
+  "porte_pequeno": true,
+  "nada": true,
+  "e_solitario": true,
+  "e_agil": true,
+  "e_noturno": true,
+  "cor_mudavel": true,
+  "tem_tentaculos": true,
+  "e_carnivoro": true,
+  "vive_oceano": true,
+  "usado_alimentacao_humana": true
+}

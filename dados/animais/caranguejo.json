@@ -1,0 +1,14 @@
+{
+  "nome": "Caranguejo",
+  "porte_pequeno": true,
+  "nada": true,
+  "escala": true,
+  "vive_em_grupo": true,
+  "tem_garras_afiadas": true,
+  "tem_pincas": true,
+  "tem_casco_ou_carapaca": true,
+  "cor_laranja": true,
+  "e_onivoro": true,
+  "vive_oceano": true,
+  "usado_alimentacao_humana": true
+}

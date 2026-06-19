@@ -1,18 +1,17 @@
 {
-  "nome": "Águia",
+  "nome": "Falcão",
   "ave": true,
   "ovos": true,
-  "porte_grande": true,
+  "porte_pequeno": true,
   "voa": true,
-  "migra": true,
-  "e_territorial": true,
+  "corre_rapido": true,
   "e_agil": true,
+  "e_territorial": true,
   "tem_penas": true,
   "tem_bico": true,
   "tem_garras_afiadas": true,
+  "cor_cinza": true,
   "cor_marrom": true,
   "e_carnivoro": true,
-  "vive_america_norte": true,
-  "vive_montanha": true,
-  "em_extincao": true
+  "vive_zona_urbana": true
 }

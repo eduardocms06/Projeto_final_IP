@@ -1,38 +1,16 @@
 {
-    "nome": "Pinguim",
-
-    "classe": "Ave",
-
-    "porte": "Medio",
-
-    "continente": "Antartida",
-
-    "voa": false,
-    "nada": true,
-    "escala": false,
-
-    "tem_penas": true,
-    "tem_pelos": false,
-    "tem_escamas": false,
-    "tem_casco": false,
-    "tem_chifres": false,
-
-    "carnivoro": true,
-    "herbivoro": false,
-    "onivoro": false,
-
-    "aquatico": false,
-    "semiaquatico": true,
-    "terrestre": true,
-    "aereo": false,
-
-    "quatro_patas": false,
-
-    "domestico": false,
-    "selvagem": true,
-
-    "vive_em_grupo": true,
-    "predador": true,
-
-    "descricao": "Ave que não voa e vive em regiões frias."
+  "nome": "Pinguim",
+  "ave": true,
+  "porte_medio": true,
+  "nada": true,
+  "voa": false,
+  "vive_em_grupo": true,
+  "migra": true,
+  "tem_penas": true,
+  "tem_bico": true,
+  "cor_preta": true,
+  "cor_branca": true,
+  "e_carnivoro": true,
+  "vive_artico": true,
+  "vive_oceano": true
 }

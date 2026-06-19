@@ -1,0 +1,14 @@
+{
+  "nome": "Bisão",
+  "mamifero": true,
+  "porte_grande": true,
+  "vive_em_grupo": true,
+  "migra": true,
+  "tem_pelo": true,
+  "tem_chifre": true,
+  "tem_juba": true,
+  "cor_marrom": true,
+  "e_herbivoro": true,
+  "vive_america_norte": true,
+  "vive_savana": true
+}

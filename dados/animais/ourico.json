@@ -1,0 +1,16 @@
+{
+  "nome": "Ouriço",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "e_solitario": true,
+  "e_noturno": true,
+  "hiberna": true,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_europa": true,
+  "vive_africa": true,
+  "vive_asia": true,
+  "vive_floresta": true,
+  "vive_zona_urbana": true,
+  "tem_espinhos": true
+}

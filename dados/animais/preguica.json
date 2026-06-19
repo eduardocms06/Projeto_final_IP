@@ -1,0 +1,15 @@
+{
+  "nome": "Preguiça",
+  "mamifero": true,
+  "porte_pequeno": true,
+  "escala": true,
+  "e_solitario": true,
+  "e_noturno": true,
+  "tem_pelo": true,
+  "tem_garras_afiadas": true,
+  "cor_marrom": true,
+  "e_herbivoro": true,
+  "vive_america_sul": true,
+  "vive_floresta": true,
+  "preguica": true
+}

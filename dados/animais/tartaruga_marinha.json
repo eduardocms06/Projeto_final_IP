@@ -1,0 +1,13 @@
+{
+  "nome": "Tartaruga-marinha",
+  "reptil": true,
+  "ovos": true,
+  "porte_medio": true,
+  "nada": true,
+  "migra": true,
+  "e_solitario": true,
+  "tem_casco_ou_carapaca": true,
+  "e_onivoro": true,
+  "vive_oceano": true,
+  "em_extincao": true
+}

@@ -1,0 +1,16 @@
+{
+  "nome": "Pato",
+  "ave": true,
+  "porte_pequeno": true,
+  "voa": true,
+  "nada": true,
+  "vive_em_grupo": true,
+  "migra": true,
+  "tem_penas": true,
+  "tem_bico": true,
+  "cor_branca": true,
+  "cor_marrom": true,
+  "e_onivoro": true,
+  "vive_agua_doce": true,
+  "usado_alimentacao_humana": true
+}

@@ -1,0 +1,13 @@
+{
+    "nome": "Axolote",
+    "anfibio": true,
+    "porte_pequeno": true,
+    "nada": true,
+    "e_solitario": true,
+    "tem_cauda_longa": true,
+    "cor_colorida": true,
+    "e_carnivoro": true,
+    "vive_america_norte": true,
+    "em_extincao": true,
+    "tem_regeneracao": true
+}

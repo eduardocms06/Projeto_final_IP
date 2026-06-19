@@ -1,0 +1,14 @@
+{
+  "nome": "Ovelha",
+  "mamifero": true,
+  "porte_medio": true,
+  "vive_em_grupo": true,
+  "e_domesticado": true,
+  "tem_pelo": true,
+  "tem_chifre": true,
+  "cor_branca": true,
+  "e_herbivoro": true,
+  "vive_montanha": true,
+  "usado_alimentacao_humana": true,
+  "produz_la": true
+}

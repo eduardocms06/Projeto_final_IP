@@ -1,19 +1,16 @@
 {
-  "nome": "Tigre",
+  "nome": "Urso-polar",
   "mamifero": true,
   "porte_grande": true,
-  "corre_rapido": true,
   "nada": true,
   "e_solitario": true,
   "e_territorial": true,
   "ataca_humanos": true,
   "tem_pelo": true,
-  "tem_listras_ou_manchas": true,
   "tem_garras_afiadas": true,
-  "tem_presas_visiveis": true,
-  "cor_laranja": true,
+  "cor_branca": true,
   "e_carnivoro": true,
-  "vive_asia": true,
-  "vive_floresta": true,
+  "vive_artico": true,
+  "vive_oceano": true,
   "em_extincao": true
 }

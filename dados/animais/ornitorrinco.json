@@ -1,0 +1,15 @@
+{
+  "nome": "Ornitorrinco",
+  "mamifero": true,
+  "ovos": true,
+  "porte_pequeno": true,
+  "nada": true,
+  "e_solitario": true,
+  "e_noturno": true,
+  "tem_pelo": true,
+  "tem_bico": true,
+  "cor_marrom": true,
+  "e_carnivoro": true,
+  "vive_agua_doce": true,
+  "e_venenoso": true
+}

@@ -1,16 +1,16 @@
 {
-  "nome": "Papagaio",
+  "nome": "Arara-azul",
   "ave": true,
   "ovos": true,
   "porte_pequeno": true,
   "voa": true,
   "vive_em_grupo": true,
-  "e_domesticado": true,
   "tem_penas": true,
   "tem_bico": true,
-  "cor_colorida": true,
+  "cor_azul": true,
   "e_herbivoro": true,
   "vive_america_sul": true,
   "vive_floresta": true,
-  "e_animal_estimacao_comum": true
+  "e_animal_estimacao_comum": true,
+  "em_extincao": true
 }

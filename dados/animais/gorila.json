@@ -1,0 +1,12 @@
+{
+  "nome": "Gorila",
+  "mamifero": true,
+  "porte_grande": true,
+  "vive_em_grupo": true,
+  "e_territorial": true,
+  "tem_pelo": true,
+  "cor_preta": true,
+  "e_herbivoro": true,
+  "vive_africa": true,
+  "vive_floresta": true
+}

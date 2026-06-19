@@ -1,10 +1,10 @@
 {
-  "nome": "Golfinho",
+  "nome": "Foca",
   "mamifero": true,
   "porte_medio": true,
   "nada": true,
   "vive_em_grupo": true,
-  "e_agil": true,
+  "tem_pelo": true,
   "cor_cinza": true,
   "e_carnivoro": true,
   "vive_oceano": true,
