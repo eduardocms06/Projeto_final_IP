@@ -11,3 +11,4 @@ Então deu certo!
 #3 Escreva no cmd e baixe a versão 2.3 do llama:
 ollama pull llama3.2
 
+#Para executar o arquivo de Front-End é necessário o Frame-Work flet do arquivo requirements.txt
