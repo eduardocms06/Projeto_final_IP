@@ -1,0 +1,41 @@
+{
+    "nome": "Águia",
+
+    "classe": "Ave",
+
+    "porte": "Grande",
+
+    "continente": "America do Norte",
+
+    "voa": true,
+    "nada": false,
+    "escala": false,
+
+    "tem_penas": true,
+    "tem_pelos": false,
+    "tem_escamas": false,
+    "tem_casco": false,
+    "tem_chifres": false,
+
+    "carnivoro": true,
+    "herbivoro": false,
+    "onivoro": false,
+
+    "aquatico": false,
+    "semiaquatico": false,
+    "terrestre": false,
+    "aereo": true,
+
+    "quatro_patas": false,
+
+    "domestico": false,
+    "selvagem": true,
+
+    "vive_em_grupo": false,
+    "predador": true,
+    "ave": true,
+    "grande": true,
+    "america_do_sul": true,
+
+    "descricao": "Ave de rapina com excelente visão e grande capacidade de voo."
+}

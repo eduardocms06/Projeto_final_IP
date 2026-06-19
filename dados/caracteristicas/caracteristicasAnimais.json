@@ -1,0 +1,42 @@
+{
+    "voa": "Seu animal voa?",
+    "nada": "Seu animal nada?",
+    "escala": "Seu animal consegue escalar?",
+
+    "tem_penas": "Seu animal possui penas?",
+    "tem_pelos": "Seu animal possui pelos?",
+    "tem_escamas": "Seu animal possui escamas?",
+    "tem_casco": "Seu animal possui casco?",
+    "tem_chifres": "Seu animal possui chifres?",
+
+    "carnivoro": "Seu animal é carnívoro?",
+    "herbivoro": "Seu animal é herbívoro?",
+    "onivoro": "Seu animal é onívoro?",
+
+    "aquatico": "Seu animal vive na água?",
+    "semiaquatico": "Seu animal passa muito tempo na água?",
+    "terrestre": "Seu animal vive em terra?",
+    "aereo": "Seu animal passa boa parte do tempo voando?",
+
+    "quatro_patas": "Seu animal possui quatro patas?",
+
+    "domestico": "Seu animal é doméstico?",
+    "selvagem": "Seu animal é selvagem?",
+
+    "vive_em_grupo": "Seu animal vive em grupo?",
+    "predador": "Seu animal é um predador?",
+
+    "mamifero": "Seu animal é um mamífero?",
+    "ave": "Seu animal é uma ave?",
+    "reptil": "Seu animal é um réptil?",
+
+    "pequeno": "Seu animal é de pequeno porte?",
+    "medio": "Seu animal é de porte médio?",
+    "grande": "Seu animal é de grande porte?",
+
+    "africa": "Seu animal é encontrado naturalmente na África?",
+    "asia": "Seu animal é encontrado naturalmente na Ásia?",
+    "europa": "Seu animal é encontrado naturalmente na Europa?",
+    "america_do_sul": "Seu animal é encontrado naturalmente na América do Sul?",
+    "oceania": "Seu animal é encontrado naturalmente na Oceania?"
+}

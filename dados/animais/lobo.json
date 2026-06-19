@@ -1,0 +1,42 @@
+{
+    "nome": "Lobo",
+
+    "classe": "Mamifero",
+
+    "porte": "Grande",
+
+    "continente": "Europa",
+
+    "voa": false,
+    "nada": true,
+    "escala": false,
+
+    "tem_penas": false,
+    "tem_pelos": true,
+    "tem_escamas": false,
+    "tem_casco": false,
+    "tem_chifres": false,
+
+    "carnivoro": true,
+    "herbivoro": false,
+    "onivoro": false,
+
+    "aquatico": false,
+    "semiaquatico": false,
+    "terrestre": true,
+    "aereo": false,
+
+    "quatro_patas": true,
+    "canideo": true,
+
+    "domestico": false,
+    "selvagem": true,
+
+    "vive_em_grupo": true,
+    "predador": true,
+    "mamifero": true,
+    "grande": true,
+    "europa": true,
+
+    "descricao": "Canídeo selvagem que costuma viver em matilhas."
+}

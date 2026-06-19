@@ -1,0 +1,39 @@
+{
+    "nome": "Tigre",
+
+    "classe": "Mamifero",
+
+    "porte": "Grande",
+
+    "continente": "Asia",
+
+    "voa": false,
+    "nada": true,
+    "escala": true,
+
+    "tem_penas": false,
+    "tem_pelos": true,
+    "tem_escamas": false,
+    "tem_casco": false,
+    "tem_chifres": false,
+
+    "carnivoro": true,
+    "herbivoro": false,
+    "onivoro": false,
+
+    "aquatico": false,
+    "semiaquatico": false,
+    "terrestre": true,
+    "aereo": false,
+
+    "quatro_patas": true,
+    "felino": true,
+
+    "domestico": false,
+    "selvagem": true,
+
+    "vive_em_grupo": false,
+    "predador": true,
+
+    "descricao": "Grande felino asiático conhecido por suas listras."
+}

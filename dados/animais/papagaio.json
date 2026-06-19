@@ -1,0 +1,38 @@
+{
+    "nome": "Papagaio",
+
+    "classe": "Ave",
+
+    "porte": "Medio",
+
+    "continente": "America do Sul",
+
+    "voa": true,
+    "nada": false,
+    "escala": true,
+
+    "tem_penas": true,
+    "tem_pelos": false,
+    "tem_escamas": false,
+    "tem_casco": false,
+    "tem_chifres": false,
+
+    "carnivoro": false,
+    "herbivoro": false,
+    "onivoro": true,
+
+    "aquatico": false,
+    "semiaquatico": false,
+    "terrestre": false,
+    "aereo": true,
+
+    "quatro_patas": false,
+
+    "domestico": true,
+    "selvagem": false,
+
+    "vive_em_grupo": true,
+    "predador": false,
+
+    "descricao": "Ave conhecida pela capacidade de imitar sons e fala."
+}

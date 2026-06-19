@@ -1,0 +1,39 @@
+{
+    "nome": "Gato",
+
+    "classe": "Mamifero",
+
+    "porte": "Pequeno",
+
+    "continente": "Africa",
+
+    "voa": false,
+    "nada": false,
+    "escala": true,
+
+    "tem_penas": false,
+    "tem_pelos": true,
+    "tem_escamas": false,
+    "tem_casco": false,
+    "tem_chifres": false,
+
+    "carnivoro": true,
+    "herbivoro": false,
+    "onivoro": false,
+
+    "aquatico": false,
+    "semiaquatico": false,
+    "terrestre": true,
+    "aereo": false,
+
+    "quatro_patas": true,
+    "felino": true,
+
+    "domestico": true,
+    "selvagem": false,
+
+    "vive_em_grupo": false,
+    "predador": true,
+
+    "descricao": "Felino doméstico ágil e excelente caçador."
+}
