@@ -1,9 +1,9 @@
-from utils.carregador import (
+from Projeto_final_IP.src.utils.carregador import (
     carregar_animais,
     carregar_caracteristicas
 )
 
-from agentes.investigador import (
+from Projeto_final_IP.src.agentes.investigador import (
     melhor_pergunta,
     filtrar_animais
 )
