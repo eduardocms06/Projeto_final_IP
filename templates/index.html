@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>      <!-- seção de configuração da página-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- serve para poder determinar a área de visualização e aresponsividade-->
+<title>QUEM SOU EU? </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">           <!-- serve para conectar-se aos servidores de fontes do Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet">   <!--link das fontes -->
+<link rel="stylesheet" href="style.css">      <!-- Serve para ser aplicado o estilo de cada elemento -->
+</head>
+<body>
+    <!-- linha 12 cria uma classe para um overlay de aspecto antigo, "aria-hidden" ignora esses elementos, pois são somente visuais-->
+<div class="crt-overlay" aria-hidden="true"></div>
+<!--Linha 15 cria um efeito de ruído-->
+<div class="noise" aria-hidden="true"></div>    
+
+<!-- PÁGINA INICIAL -->
+<section id="screen-home" class="screen active">    <!--agrupa conteúdos da tela inicial, cria uma identificação unica para a página e class aplica duas classes no CSS-->
+  <div class="vignette"></div>        <!--Camada vazia que aplica efeito de vinheta nas bordas-->
+  <div class="home-wrap">     <!-- centraliza e alinha todos os objetos em um único lugar para facilidar a estilização com CSS -->  <!-- Cria uma classe para estilizar o texto no CSS, transformadno ele em um "carimbo"-->
+    <!-- tag do titulo principal, classe "span" isola o elemento _ e a classe blink cursos estiliza fazendo o elemento piscar-->
+    <h1 class="title-main">QUEM SOU<span class="blink-cursor">_</span>EU?</h1>
+
+    <div class="home-actions">    <!-- Serve para agrupar todos os botões da tela inicial para a estilização-->
+      <button class="btn btn-primary" id="btn-modalidades">       <!-- Classe botão com estilização padrão e uma secundária para modificações e reutilizações-->
+       <!-- Os span a seguir são os conteúdos dentro de cada botão-->
+        <span class="btn-index">01</span>                  
+        <span class="btn-label">MODALIDADES</span>
+        <span class="btn-arrow">&raquo;</span>    <!-- &raquo; código HTML para seta dupla direita-->
+      </button>
+      <button class="btn btn-danger" id="btn-sair">
+        <span class="btn-index">02</span>
+        <span class="btn-label">SAIR</span>
+        <span class="btn-arrow">&raquo;</span>    
+      </button>
+    </div>
+        <!--Rodapé com uma mensagem para o usuário, class "status-dot" para estilizar luz verde piscando -->
+    <p class="footer-note"> --- CONEXÃO CRIPTOGRAFADA &middot; STATUS: <span class="status-dot"></span> ONLINE ---</p>
+  </div>
+</section>
+
+<!-- TELA MODALIDADES-->
+<section id="screen-modalidades" class="screen">    <!--Section, para criar uma nova tela, com novas identificações unicas e classes para estilização-->
+  <div class="topbar">    <!-- Cria uma headline com um botão para voltar e um título daquela tela-->
+    <button class="btn-back" data-destino="home">&laquo; VOLTAR</button>
+    <p class="topbar-title">SELEÇÃO DE CATEGORIA</p>
+  </div>
+
+  <div class="modalidades-wrap">
+    <p class="section-lead">Escolha uma das categorias para iniciar o jogo e descruba... Quem sou eu? </p>
+      <!--div para montar o grid do cartão das modalidades-->
+    <div class="cards-grid" id="cards-grid">
+      <!-- botões que representa uma modalidade-->
+      <button class="mod-card" data-modalidade="1">
+        <h3 class="mod-title">ANIMAIS</h3>
+        <p class="mod-desc">Pense em um animal e tente adivinhar qual animal sou eu!!</p>
+        <div class="mod-footer">            <!-- div para criar rodapé dos cards, classe para estilização no CSS-->
+          <span>ABRIR &raquo;</span>
+        </div>
+      </button>
+
+      <button class="mod-card" data-modalidade="2">
+        <h3 class="mod-title">FRUTA</h3>
+        <p class="mod-desc">Pense em uma fruta e tente adivinhar qual fruta sou eu!!</p>
+        <div class="mod-footer">
+          <span>ABRIR &raquo;</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TELA 3: CHAT / INTERROGATÓRIO ============ -->
+<section id="screen-chat" class="screen">   <!-- Cria uma nota tela de section com nova identificação e classes para a estilização-->
+  <div class="topbar">
+    <button class="btn-back" data-destino="modalidades">&laquo; ABANDONAR CASO</button>
+    <p class="topbar-title" id="chat-title">DOSSIÊ</p>
+    <span class="topbar-id" id="chat-ref">REF: --—</span>
+  </div>
+
+  <div class="chat-wrap">       <!-- Cria uma "Caixa" onde será escrito as respostas-->
+    <div class="chat-log" id="chat-log"></div>      <!--id serve para injetar novos paragrafos de texto-->
+    <div class="chat-input-row">           <!-- Agrupa tanto o botão de enviar e o de escrever-->
+
+      <!-- id chat-input: Identificador para o JS capturar os textos que foi clicado em "enviar"-->
+      <!-- placeholder = Texto de observação que fica dentro do campo de entrada-->
+      <!-- Autocomplete impede que o gooogle ou navegadores ficasse mostrando preenchimento automático-->
+      <input type="text" id="chat-input" class="chat-input" placeholder="Faça a sua Pergunta ou Resposta de Quem sou Eu." autocomplete="off">
+      <button class="btn-send" id="btn-send">ENVIAR</button>        <!-- ID para ser implementado o envio no JS e configurações.-->
+    </div>
+  </div>
+</section>
+
+<!-- TELA DE SAÍDA quando clicado no botão "sair"-->
+<div id="shutdown-overlay" class="shutdown-overlay">
+  <div class="shutdown-text">
+    <p>&gt; ENCERRANDO SESSÃO...</p>
+    <p>&gt; APAGANDO REGISTROS TEMPORÁRIOS...</p>
+    <p>&gt; CONEXÃO ENCERRADA.</p>
+    <p class="shutdown-final">Você pode fechar esta janela com segurança.</p>
+    <button class="btn btn-primary" id="btn-reconectar">RECONECTAR</button>
+  </div>
+</div>
+
+<script src="script.js"></script>     <!--Importa as funcionalidades do JS-->
+</body>
+</html>
