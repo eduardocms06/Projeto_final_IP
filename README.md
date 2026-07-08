@@ -15,28 +15,22 @@ ollama pull llama3.2
 
 ```
 .
-├── Projeto_final_IP
-    ├── agentes
-        └── investigador.py         #Arquivo que busca se a resposta é valida dentro do banco de dados .json
-        └── respondedor.py          # Ainda não está completo com o RAG
-    ├── dados
-        ├── animais 
-            └── nome animal.json...         #Contém 1 arquivo json para cada animal incluido no arquivo
-        ├── caracteristicas
-            └── caracteristicasAnimais.json         #Dicionário de perguntas para cada uma das características
-    ├── Frontend
-        ├──estatic
-            └──CSS          #Todo o estilo de página.
-            └──HTML         #estrutura do texto das 3 telas, HOME, MODALIDADES, CHAT
-            └──JavaScript       #Utilizado para navegação e comportamento visual da aplicação
-    ├── rag
-        └── consulta. py              #Incompleto, ainda falta a implementação
-        └── indexador.py              #Incompleto, ainda falta a implementação
-        └──rag_app.py                  #estrutura base do RAG
-    ├── utils
-        └──carregador .py              #carrega todos os bancos de dados
-    ├──main.py                         #arquivo principal
-    ├── README.md
+Projeto_final_IP/
+├── .venv/                          # Ambiente Virtual (configurações locais)
+├── assets/                         # Imagens, mídias e outros recursos visuais
+├── data/                           # Arquivos de dados (.json, CSV, etc.)
+|   └── animais/                    # Dicionário de cada animal com sua característica
+|   └── características/            # Dicionário de perguntas e características dos animais
+├── src/                            # Todo o código fonte do projeto
+|   └── agentes/                    # Módulos para a construção dos agentes
+|   └── rag/                        # Módulos do motor RAG
+|   └── templates/                  # Arquivos de templates (HTML, CSS, Js, etc.)
+|   └── utils/                      # Funções de utilizdades e códigos auxiliares
+|
+├── .gitignore                      # Arquivos que devem ser ignorados
+├── main.py                         # Arquivo principal de toda a aplicação
+├── README.md                       # Documentação principal do projeto
+├── requirements.txt                # Lista dos materiais que são necessários para o bom funcionamento do projeto.
 ```
 ## Telas
 
