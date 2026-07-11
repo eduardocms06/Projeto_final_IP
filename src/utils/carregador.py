@@ -1,31 +1,33 @@
-import os
+from pathlib import Path
 import json
+
+# Raiz do projeto
+BASE_DIR = Path(__file__).resolve().parents[2]
+
+PASTA_ANIMAIS = BASE_DIR / "data" / "animais"
+
+ARQUIVO_CARACTERISTICAS = (
+    BASE_DIR
+    / "data"
+    / "caracteristicas"
+    / "caracteristicasAnimais.json"
+)
 
 
 def carregar_animais():
 
     animais = []
 
-    pasta_animais = "dados/animais"
+    for arquivo in PASTA_ANIMAIS.glob("*.json"):
 
-    for arquivo in os.listdir(pasta_animais):
+        with open(
+            arquivo,
+            encoding="utf-8"
+        ) as f:
 
-        if arquivo.endswith(".json"):
-
-            caminho = os.path.join(
-                pasta_animais,
-                arquivo
+            animais.append(
+                json.load(f)
             )
-
-            with open(
-                caminho,
-                "r",
-                encoding="utf-8"
-            ) as f:
-
-                animal = json.load(f)
-
-                animais.append(animal)
 
     return animais
 
@@ -33,9 +35,8 @@ def carregar_animais():
 def carregar_caracteristicas():
 
     with open(
-        "dados/caracteristicas/caracteristicasAnimais.json",
-        "r",
+        ARQUIVO_CARACTERISTICAS,
         encoding="utf-8"
-    ) as arquivo:
+    ) as f:
 
-        return json.load(arquivo)
+        return json.load(f)
