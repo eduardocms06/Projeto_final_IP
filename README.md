@@ -43,6 +43,9 @@ Projeto_final_IP/
 ## Acessibilidade e responsividade
 - Responsivo para telas até 560px
 
+## Dependências externas
+- Fontes do Google Fonts: Special Elite e Share Tech Mono, carregadas via <link> no index.html. Para uso totalmente offline, baixe as fontes e sirva localmente.
+
 ## Banco de dados
 - Características animais - Armazena dicionario para perguntas de sim ou não para cada característica dos animais
 - animais Adiciona cada caractteristica a seu respectivo animal
