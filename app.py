@@ -3,7 +3,9 @@ from src.jogo.partida import Partida
 from src.llm.interpretador import interpretar_resposta
 
 
-app = Flask(__name__)
+app = Flask(__name__, 
+            template_folder='src/templates', 
+            static_folder='src/templates/static')
 
 partida = Partida()
 
