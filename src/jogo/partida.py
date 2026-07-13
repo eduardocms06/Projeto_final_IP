@@ -28,6 +28,8 @@ class Partida:
 
         self.jogo_finalizado = False
 
+        self.estado = "ESCOLHENDO_ANIMAL"
+
     def mostrar_cabecalho(self):
 
         print()
@@ -90,6 +92,8 @@ class Partida:
         self.turno = 1
 
         self.jogo_finalizado = False
+
+        self.estado = "ESCOLHENDO_ANIMAL"
     
     def listar_animais(self):
 
@@ -124,6 +128,8 @@ class Partida:
 
         self.jogador.escolher_animal(animal)
         print(f"\nVocê escolheu: {animal['nome']}")
+
+        self.estado = "VEZ_JOGADOR"
     
     def listar_caracteristicas(self):
 

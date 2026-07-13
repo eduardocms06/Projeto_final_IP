@@ -6,6 +6,8 @@
    ========================================================= */
 
 // ---------- Navegação entre telas ----------
+let ultimaCaracteristica = null;
+
 function showScreen(id){
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById("screen-" + id).classList.add("active");
@@ -147,6 +149,7 @@ function mostrarListaAnimais(animais) {
             });
 
             const pergunta = await obterPerguntaIA();
+            ultimaCaracteristica = pergunta.caracteristica;
 
             const dados = await resposta.json();
 
@@ -156,12 +159,6 @@ function mostrarListaAnimais(animais) {
                 "user",
                 "VOCÊ",
                 "Escolhi: " + animal
-            );
-
-            addMsg(
-                "system",
-                "IA",
-                "Perfeito! Já escolhi meu animal também.<br>Vamos começar!"
             );
 
             addMsg(
@@ -194,13 +191,63 @@ async function obterPerguntaIA() {
 // ---------- Enviar palpite / mensagem ----------
 // TODO (backend): validar o palpite contra a identidade oculta,
 // atualizar tentativas e encerrar o caso quando resolvido.
-function enviarMensagem(){
-  const input = document.getElementById("chat-input");
-  const valor = input.value.trim();
-  if (!valor) return;
+async function enviarMensagem() {
 
-  addMsg("user", "VOCÊ", valor);
-  input.value = "";
+    const input = document.getElementById("chat-input");
+
+    const valor = input.value.trim();
+
+    if (!valor) return;
+
+    // Mostra a mensagem do usuário no chat
+    addMsg(
+        "user",
+        "VOCÊ",
+        valor
+    );
+
+    // Limpa o campo
+    input.value = "";
+
+    // Desabilita enquanto espera a IA
+    input.disabled = true;
+    document.getElementById("btn-send").disabled = true;
+
+    const resposta = await fetch("/mensagem", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+
+            mensagem: valor,
+
+            caracteristica: ultimaCaracteristica
+
+        })
+
+    });
+
+    const dados = await resposta.json();
+
+    ultimaCaracteristica = dados.caracteristica;
+
+    // Mostra a próxima pergunta da IA
+    addMsg(
+        "system",
+        "IA",
+        dados.pergunta
+    );
+
+    // Reabilita o campo
+    input.disabled = false;
+    document.getElementById("btn-send").disabled = false;
+
+    input.focus();
+
 }
 
 document.getElementById("btn-send").addEventListener("click", enviarMensagem);

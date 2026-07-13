@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from src.jogo.partida import Partida
+from src.llm.interpretador import interpretar_resposta
 
 
 app = Flask(__name__)
@@ -70,6 +71,64 @@ def pergunta_ia():
         "caracteristica": pergunta,
 
         "pergunta": partida.caracteristicas[pergunta]
+
+    })
+
+@app.post("/responder-ia")
+def responder_ia():
+
+    dados = request.get_json()
+
+    partida.ia.atualizar_animais(
+
+        dados["caracteristica"],
+
+        dados["resposta"]
+
+    )
+
+    pergunta = partida.ia.escolher_pergunta()
+
+    return jsonify({
+
+        "caracteristica": pergunta,
+
+        "pergunta": partida.caracteristicas[pergunta],
+
+        "restantes": partida.ia.quantidade_restante()
+
+    })
+
+@app.post("/mensagem")
+def mensagem():
+
+    dados = request.get_json()
+
+    mensagem = dados["mensagem"]
+
+    caracteristica = dados["caracteristica"]
+
+    pergunta = partida.caracteristicas[caracteristica]
+
+    resposta = interpretar_resposta(
+        pergunta,
+        mensagem
+    )
+
+    partida.ia.atualizar_animais(
+        caracteristica,
+        resposta
+    )
+
+    proxima = partida.ia.escolher_pergunta()
+
+    return jsonify({
+
+        "caracteristica": proxima,
+
+        "pergunta": partida.caracteristicas[proxima],
+
+        "restantes": partida.ia.quantidade_restante()
 
     })
 
