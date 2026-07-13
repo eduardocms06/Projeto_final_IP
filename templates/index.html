@@ -6,7 +6,8 @@
 <title>QUEM SOU EU? </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">           <!-- serve para conectar-se aos servidores de fontes do Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet">   <!--link das fontes -->
-<link rel="stylesheet" href="style.css">      <!-- Serve para ser aplicado o estilo de cada elemento -->
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">      <!-- Serve para ser aplicado o estilo de cada elemento -->
 </head>
 <body>
     <!-- linha 12 cria uma classe para um overlay de aspecto antigo, "aria-hidden" ignora esses elementos, pois são somente visuais-->
@@ -102,6 +103,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>     <!--Importa as funcionalidades do JS-->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>     <!--Importa as funcionalidades do JS-->
 </body>
 </html>

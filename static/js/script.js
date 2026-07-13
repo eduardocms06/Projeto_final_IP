@@ -35,19 +35,49 @@ document.getElementById("btn-reconectar").addEventListener("click", () => {
 // TODO (backend): usar o atributo data-modalidade para buscar
 // os dados reais do dossiê (título, referência, pistas, identidade oculta etc.)
 document.querySelectorAll(".mod-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const modalidadeId = card.getAttribute("data-modalidade");
-    abrirChat(modalidadeId);
-  });
+
+    card.addEventListener("click", async () => {
+
+        const modalidadeId = card.getAttribute("data-modalidade");
+
+        await iniciarPartida();
+
+        await abrirChat(modalidadeId);
+
+    });
+
 });
 
-function abrirChat(modalidadeId){
+async function iniciarPartida() {
+
+    const resposta = await fetch("/iniciar", {
+
+        method: "POST"
+
+    });
+
+    return await resposta.json();
+
+}
+
+async function obterAnimais() {
+
+    const resposta = await fetch("/animais");
+
+    return await resposta.json();
+
+}
+
+async function abrirChat(modalidadeId){
   // Placeholder de cabeçalho — substituir pelos dados reais da modalidade escolhida.
   document.getElementById("chat-title").textContent = "MODALIDADE " + modalidadeId;
   document.getElementById("chat-ref").textContent = "REF: MOD-0" + modalidadeId;
 
   // Reseta o log e os campos da tela de chat.
   document.getElementById("chat-log").innerHTML = "";
+  const animais = await obterAnimais();
+
+  mostrarListaAnimais(animais);
   document.getElementById("chat-input").value = "";
   document.getElementById("chat-input").disabled = false;
   document.getElementById("btn-send").disabled = false;
@@ -68,6 +98,99 @@ function addMsg(tipo, tag, texto){
   log.scrollTop = log.scrollHeight;
 }
 
+function mostrarListaAnimais(animais) {
+
+    addMsg(
+        "system",
+        "IA",
+        "Escolha o seu animal:"
+    );
+
+    const log = document.getElementById("chat-log");
+
+    const container = document.createElement("div");
+
+    container.id = "lista-animais";
+
+    const botoes = [];
+
+    animais.forEach(animal => {
+
+        const botao = document.createElement("button");
+
+        botoes.push(botao);
+
+        botao.textContent = animal;
+
+        botao.className = "btn-animal";
+
+        botao.addEventListener("click", async () => {
+
+            container.remove();
+
+            const resposta = await fetch("/escolher-animal", {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type": "application/json"
+
+                },
+
+                body: JSON.stringify({
+
+                    animal: animal
+
+                })
+
+            });
+
+            const pergunta = await obterPerguntaIA();
+
+            const dados = await resposta.json();
+
+            console.log(dados)
+
+            addMsg(
+                "user",
+                "VOCÊ",
+                "Escolhi: " + animal
+            );
+
+            addMsg(
+                "system",
+                "IA",
+                "Perfeito! Já escolhi meu animal também.<br>Vamos começar!"
+            );
+
+            addMsg(
+                "system",
+                "IA",
+                "Perfeito! Já escolhi meu animal também.<br><br>" +
+                pergunta.pergunta
+            );
+
+        });
+
+        container.appendChild(botao);
+
+    });
+
+    log.appendChild(container);
+
+    log.scrollTop = log.scrollHeight;
+
+}
+
+async function obterPerguntaIA() {
+
+    const resposta = await fetch("/pergunta-ia");
+
+    return await resposta.json();
+
+}
+
 // ---------- Enviar palpite / mensagem ----------
 // TODO (backend): validar o palpite contra a identidade oculta,
 // atualizar tentativas e encerrar o caso quando resolvido.
@@ -78,8 +201,6 @@ function enviarMensagem(){
 
   addMsg("user", "VOCÊ", valor);
   input.value = "";
-
-  addMsg("system", "SISTEMA", "[Aguardando integração com o backend]");
 }
 
 document.getElementById("btn-send").addEventListener("click", enviarMensagem);

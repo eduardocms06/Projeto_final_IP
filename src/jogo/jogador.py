@@ -4,11 +4,19 @@ class Jogador:
 
         self.animal = None
 
+        self.perguntas_feitas = []
+
         self.historico = []
 
     def escolher_animal(self, animal):
 
         self.animal = animal
+
+    def adicionar_pergunta(self, caracteristica):
+
+        self.perguntas_feitas.append(
+            caracteristica
+        )
 
     def responder(self, caracteristica):
 
@@ -30,5 +38,7 @@ class Jogador:
     def reiniciar(self):
 
         self.animal = None
+
+        self.perguntas_feitas = []
 
         self.historico = []

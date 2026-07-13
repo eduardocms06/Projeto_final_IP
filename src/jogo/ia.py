@@ -47,23 +47,37 @@ class IA:
 
     def escolher_pergunta(self):
 
-        print("\n========== DEBUG ==========")
-        print(f"Animais possíveis: {len(self.animais_possiveis)}")
-        print(f"Perguntas feitas: {self.perguntas_feitas}")
-
         pergunta = melhor_pergunta(
             self.animais_possiveis,
             self.caracteristicas,
             self.perguntas_feitas
         )
 
-        print(f"Pergunta escolhida: {pergunta}")
-        print("===========================\n")
-
         if pergunta:
+
             self.perguntas_feitas.append(pergunta)
 
         return pergunta
+    
+    def mostrar_debug(self):
+
+        print("\n========== DEBUG ==========")
+
+        print(f"Animais restantes: {len(self.animais_possiveis)}")
+
+        print()
+
+        for animal in self.animais_possiveis:
+
+            print("-", animal["nome"])
+
+        print()
+
+        print("Perguntas feitas:")
+
+        print(self.perguntas_feitas)
+
+        print("===========================\n")
 
     def atualizar_animais(self, caracteristica, resposta):
         """

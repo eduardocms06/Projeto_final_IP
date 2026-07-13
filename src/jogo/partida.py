@@ -136,21 +136,6 @@ class Partida:
             print(f"{indice + 1} - {caracteristica}")
 
         return caracteristicas
-
-    def responder_pergunta_jogador(self, caracteristica):
-
-        return self.ia.responder(caracteristica)
-
-    def pergunta_da_ia(self):
-
-        return self.ia.escolher_pergunta()
-
-    def responder_ia(self, caracteristica, resposta):
-
-        self.ia.atualizar_animais(
-            caracteristica,
-            resposta
-        )
     
     def perguntar_para_ia(self):
 
@@ -175,7 +160,18 @@ class Partida:
 
         caracteristica = caracteristicas[opcao - 1]
 
-        resposta = self.ia.responder(caracteristica)
+        self.jogador.adicionar_pergunta(
+            caracteristica
+        )
+
+        resposta = self.ia.responder(
+            caracteristica
+        )
+
+        self.jogador.adicionar_historico(
+            caracteristica,
+            resposta
+        )
 
         print()
 
@@ -185,31 +181,9 @@ class Partida:
 
         return caracteristica, resposta
 
-    def ia_pode_adivinhar(self):
-
-        return self.ia.pode_adivinhar()
-
-    def palpite_ia(self):
-
-        return self.ia.palpite()
-
     def verificar_palpite_jogador(self, animal):
 
         return self.ia.verificar_palpite(animal)
-
-    def verificar_palpite_ia(self):
-
-        if not self.ia.pode_adivinhar():
-
-            return False
-
-        palpite = self.ia.palpite()
-
-        return (
-            palpite["nome"].lower()
-            ==
-            self.jogador.animal["nome"].lower()
-        )
 
     def proximo_turno(self):
 
@@ -253,8 +227,10 @@ class Partida:
 
                 print("Digite apenas s ou n.")
 
+        self.ia.mostrar_debug()
+
         # Caso ainda não saiba o animal, continua perguntando
-        pergunta = self.pergunta_da_ia()
+        pergunta = self.ia.escolher_pergunta()
 
         print()
         print(pergunta_para_texto(pergunta))
@@ -275,34 +251,12 @@ class Partida:
 
             print("Digite apenas s ou n.")
 
-        self.responder_ia(
+        self.ia.atualizar_animais(
             pergunta,
             resposta
         )
 
         self.mostrar_resumo_ia()
-
-    def verificar_vitoria(self):
-
-        if self.ia_pode_adivinhar():
-
-            animal = self.palpite_ia()
-
-            print()
-            print("===================================")
-            print("A IA fez um palpite!")
-            print("===================================")
-            print()
-
-            print(animal["nome"])
-
-            if self.verificar_palpite_ia():
-
-                print("\nA IA venceu!")
-
-                return True
-
-        return False
 
     def jogar(self):
 
