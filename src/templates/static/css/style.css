@@ -8,62 +8,106 @@
   /* Paleta de cores principal do projeto*/
   --amber:#ffb000;                                  /* Cor principal para destaques mais presentes, por exemplo, títulos*/
   --amber-bright:#ffd166;                           /* Cor utilizada para destaques de responsividade, como por exemplo hover*/
-  --amber-dim:#02007a;                              /* Utilizado para outros elementos de menor importância visualmente*/
+  --amber-dim:#7a4900;                              /* Utilizado para outros elementos de menor importância visualmente*/
   --amber-faint:#3d2e0a;                            /* Utilizado para botões mais sutis, ou divisórias*/
 
   /* Elementos de interface*/
-  --line:#4a3c1f;                                   /**/
-  --danger:#c23b2e;                                 /**/
-  --danger-bright:#ff6b52;                          /**/
-  --ok:#8fbf5a;                                     /**/
-  --text-dim:#9c8a5c;                               /**/
+  --line:#4a3c1f;                                   /*Cor base para linhas de separação*/
+  --danger:#c23b2e;                                 /* Usado para todos os elementos de risco, (ex: botão sair)*/
+  --danger-bright:#ff6b52;                          /*Vermelho para destaques, como por exemplo o Hover em elementos de risco*/
+  --ok:#8fbf5a;                                     /* Utilizado para botões de ações positivas (ex: botão Sim)*/
+  --text-dim:#9c8a5c;                               /* Utilizado para os textos de menores importância ou secundários (ex: rodapés)*/
 
   /* Tipografia (fontes) utilizadas */
-  --font-display: 'Special Elite', cursive;
-  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Special Elite', cursive;           /* Utilizada nos títulos, subtítulos*/
+  --font-mono: 'Share Tech Mono', monospace;          /* Utilizado para todos os textos e elementos do código.*/
 }
 
-*{ box-sizing: border-box; }
-
-html, body{
-  margin:0; padding:0; height:100%;
-  background: var(--void);
-  color: var(--amber);
-  font-family: var(--font-mono);
-  overflow: hidden;
+*{ box-sizing: border-box; }                          /* O "*" aplica a regra em sua frente para todos os elementos do código.
+                                                         A regra consiste definir o espaçamento do elemento do tamanho definido, evitando bugs.*/
+/* As configurações aqui dentro valem para todo o código HTML*/
+html, body{                                             
+  margin:0;                                            /* Remove a margem padrão adicionada pelo navegador nas bordas da tela, fazendo o site cobrir todo o espaço*/ 
+  padding:0;                                           /* Remove qualquer espaçamento interno padrão*/
+  height:100%;                                         /* Força a página ocupar todo o espaço da janela disponível*/
+  /* Aplicação das variáveis definidas no :root*/
+  background: var(--void);                             /* Define a cor de fundo do site*/     
+  color: var(--amber);                                 /* Define a cor padrão de todos os textos*/
+  font-family: var(--font-mono);                       /* Aplica a fonte monospace configurada anteriormente */
+  overflow: hidden;                                    /* Esconde a barra de rolagem tanto vertical quanto horizontal, evitando que o usuário role*/
 }
+/* Padroniza os elementos interativos*/
+button{ 
+  font-family: inherit;                                /*Força o botão a usar a mesma fonte do resto do site (Share Tech Mono)*/
+  cursor: pointer; }                                   /* Muda o cursor do mouse para o ponteiro, indicando elemento clicável*/
+input{ font-family: inherit; }                         /* Força todos os campos de input a utilizarem a fonte padrão do site*/
 
-button{ font-family: inherit; cursor: pointer; }
-input{ font-family: inherit; }
-
-/* ---------- CRT + ruído ---------- */
+/* Efeito CRT(Tubo) e ruídos */
+/* Cria as camadas de linhas de varredura na tela*/
 .crt-overlay{
-  position:fixed; inset:0; z-index:50; pointer-events:none;
+  position:fixed;                                      /* Fixa o elemento na tela, ele não se move mesmo se houver rolagem*/
+  inset:0;                                             /* Atalho para indicar preenchimento 100% da tela em (top, right, bottom, left)*/
+  z-index:50;                                          /* Coloca a camada em cima da maioria dos outros elementos do site*/
+
+  /* Permite que os cliques do mouse passem pela camada de efeito para atingir botões e outros elementos.*/
+  pointer-events:none;
+  
+  /* Cria linhas horizontais finas repetitivas quase transparentes */
   background: repeating-linear-gradient(
     to bottom,
     rgba(255,176,0,0.035) 0px, rgba(255,176,0,0.035) 1px,
     transparent 2px, transparent 3px
   );
+  /* Mistura as linhas com as cores que estão por baixo, criando um efeito de luz mais realista */
   mix-blend-mode: overlay;
 }
+/* Cria uma sombra arredondada nas bordas da tela, simulando uma vinheta */
 .crt-overlay::after{
-  content:""; position:absolute; inset:0;
+  content:"";                                         /* Necessário para que o elemento exista na tela */
+  position:absolute;                                  /* Fixa o elemento na tela em relação ao .crt-overlay */ 
+  inset:0;                                            /* A sombra cobre toda a tela */
+
+/* Cria um degradê circular no centro, utilizando transparente no centro da tela e preto 55% nas bordas */
   background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
 }
+
+/* Camada estática de ruído visual na tela. */
 .noise{
-  position:fixed; inset:0; z-index:49; pointer-events:none;
-  opacity:0.05;
+  position:fixed;                                     /* Fixa o elemento de ruído na tela */
+  inset:0;                                            /* O ruído cobre a tela em todas as direções. */ 
+  z-index:49;                                         /* Coloca o ruído acima dos outros elementos e abaixo do .crt-overlay */
+  pointer-events:none;                                /* Garante que o usuário possa clicar nos botões através do ruído */
+  opacity:0.05;                                       /* Mantém o ruído sutil com transparência de 0.05% */
+
+/* Código SVG embutido para o padrão visual de ruído */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Aplica a animação de deslocamento ao ruído "steps(4)" faz os movimentos serem de 4 pulos "duros" não sendo um movimento fluido
+  repete a animação por 0.4s infinitamente*/
   animation: noise-shift 0.4s steps(4) infinite;
 }
+
+/* Bloco de animação do CSS */
+
+/* Move a imagem de fundo ligeiramente para os lados e para cim/baixo */
 @keyframes noise-shift{
-  0%{ transform:translate(0,0); } 25%{ transform:translate(-1%,1%); }
-  50%{ transform:translate(1%,-1%); } 75%{ transform:translate(-1%,-1%); }
-  100%{ transform:translate(0,0); }
+  0%{ transform:translate(0,0); }                     /* A imagem começa no centro */
+  25%{ transform:translate(-1%,1%); }                 /* Move 1% para a esquerda e 1% para baixo */
+  50%{ transform:translate(1%,-1%); }                 /* Move 1% para a direita e 1% para cima */
+  75%{ transform:translate(-1%,-1%); }                /* Move 1% para a esquerda e 1% para cima */
+  100%{ transform:translate(0,0); }                   /* Retorna a posição original*/
 }
+
+/* Animação de "piscar" */
 @keyframes flicker{
-  0%,100%{ opacity:1; } 92%{ opacity:1; } 93%{ opacity:0.82; }
-  94%{ opacity:1; } 96%{ opacity:0.9; } 97%{ opacity:1; }
+  /* Do ínicio até 92% a tela fica com a visibilidade normal */
+  0%,100%{ opacity:1; }
+  92%{ opacity:1; }
+  /* Entre 93 e 97% a a opacidaded cai rapidamente e volta */
+  93%{ opacity:0.82; }                                /* Leve apaga a tela fica somente 82% visível */                           
+  94%{ opacity:1; }                                   /* Tela normal */
+  96%{ opacity:0.9; }                                 /* Leve apaga a tela fica somente 90% visível */   
+  97%{ opacity:1; }                                   /* Volta ao normal até o fim da animação */
 }
 
 /* ---------- Telas ---------- */
