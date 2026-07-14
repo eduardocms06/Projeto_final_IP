@@ -1,15 +1,37 @@
-GUIA DE INSTALAÇÃO:
 
-#1 Instale o OLLAMA
-https://ollama.com/download
+### 1. Pré-requisitos para rodar a aplicação (Ollama)
+O projeto utiliza um modelo de linguagem local. Siga os passos abaixo:
+1. Baixe e instale o [Ollama](https://ollama.com/download).
+2. Verifique se a instalação foi concluída com sucesso abrindo o terminal (cmd) e digitando:
+```bash
+   ollama --version
+```
+3. Novamente no CMD baixe a versão 2.3 do Ollama digitando:
+```bash
+   ollama pull llama3.2
+```
+### 2. Rodando o projeto
+Com o Ollama configurado clone este repositório e instale as dependências.
+```bash
+# Crie e ative um ambiente virtual na máquina (Opcional, porém recomendado).
+python -m venv .venv
 
-#2 Verifique se intalou corretamente abrindo o cmd e digitando:
-ollama --version
-Se aparecer uma versão, tipo: ollama version 0.x.x 
-Então deu certo!
+#Para ativar no Mac/Linux
+source .venv/bin/activate
 
-#3 Escreva no cmd e baixe a versão 2.3 do llama:
-ollama pull llama3.2
+#Para ativar no windows
+.venv\Scripts\activate
+```
+1. Próximo Passo Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+2. Rode a aplicação
+```bash
+python main.py
+```
+
+
 
 ## Estrutura do Projeto
 
@@ -17,18 +39,21 @@ ollama pull llama3.2
 .
 Projeto_final_IP/
 ├── .venv/                          # Ambiente Virtual (configurações locais)
-├── assets/                         # Imagens, mídias e outros recursos visuais
+├── chroma_db                       #Banco de dados vetorial (Gerado automaticamente)
 ├── data/                           # Arquivos de dados (.json, CSV, etc.)
 |   └── animais/                    # Dicionário de cada animal com sua característica
 |   └── características/            # Dicionário de perguntas e características dos animais
 ├── src/                            # Todo o código fonte do projeto
 |   └── agentes/                    # Módulos para a construção dos agentes
+|   └──jogo/                        # Lógica central do jogo (regras, jogadores e partida)
+|   └──llm/                         # Interpretação e integração com o modelo local
 |   └── rag/                        # Módulos do motor RAG
 |   └── templates/                  # Arquivos de templates (HTML, CSS, Js, etc.)
 |   └── utils/                      # Funções de utilizdades e códigos auxiliares
-|
+├── testes/                         # Scripts de testes (ex: teste_partida)
 ├── .gitignore                      # Arquivos que devem ser ignorados
-├── main.py                         # Arquivo principal de toda a aplicação
+├── app.py                          # Arquivo para execução de todos os métodos e Front-End + Back-End
+├── main.py                         # Arquivo de execução principal
 ├── README.md                       # Documentação principal do projeto
 ├── requirements.txt                # Lista dos materiais que são necessários para o bom funcionamento do projeto.
 ```
