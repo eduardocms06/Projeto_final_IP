@@ -1,3 +1,6 @@
+# QUEM SOU EU?
+- A aplicação a seguir trata de uma releitura do famoso jogo `Quem Sou Eu?`, onde o humano e a máquina participaram de um duelo. Cada participante terá a sua chance de jogar e traçar perguntas estratégicas para descobrir quem consegue adivinhar primeiro o animal ou personagem do oponente. O jogo é composto por rodadas intercaladas, de perguntas e respostas de Sim ou Não, vai encarar o desafio?
+
 
 ### 1. Pré-requisitos para rodar a aplicação (Ollama)
 O projeto utiliza um modelo de linguagem local. Siga os passos abaixo:
@@ -28,10 +31,8 @@ pip install -r requirements.txt
 ```
 2. Rode a aplicação
 ```bash
-python main.py
+python app.py
 ```
-
-
 
 ## Estrutura do Projeto
 
@@ -62,7 +63,7 @@ Projeto_final_IP/
 1. Home - Contém título do jogo
     `Botões modalidades` - entra na 2º pag 
     - `sair` - Dispara alguns sinais no terminal para finalizar a aplicação
-2. Modalidades - Contém uma grade com 4 botões modalidades
+2. Modalidades - Contém uma grade com as opções de modalidades `atualmente só possui 1 modalidade`
 3. Chat - Onde irá ocorrer toda a conversa com RAG ou Banco de dados.
 
 ## Acessibilidade e responsividade
