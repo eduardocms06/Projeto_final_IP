@@ -35,7 +35,8 @@ document.querySelectorAll(".mod-card").forEach(card => {
 // Estado local do front end
 let turnoAtual        = "investigador";       // indica de quem é o turno ativo
 let ultimaPerguntaInv = "";                   // Armazena o texto da pergunta atual do Investigador
-let ultimaPerguntaResp= "";                   // Armazena o texto da pergunta atual do Respondedor
+let ultimaPerguntaResp= "";
+let ultimaCaracteristicaInv = "";                   // Armazena o texto da pergunta atual do Respondedor
 let aguardandoChute   = null;                 // "investigador" | "respondedor" | null
 
 // Inicializa a tela de chat de uma partida
@@ -59,8 +60,7 @@ async function abrirChat(modalidadeId){
 
   // Inicia partida no backend
   try {
-    // Faz a requisição POST assíncrona para registrar o início no backend
-    const res = await fetch("/api/jogo/iniciar", { method: "POST" });
+    const res = await fetch("/iniciar", { method: "POST" });
     const data = await res.json();
 
     //Insere as orientações iniciais nos logs do jogo
@@ -186,6 +186,8 @@ async function buscarPerguntaInvestigador(){
     }
 
     // Pergunta normal salvando-a no estado global
+    // Pergunta normal salvando-a no estado global
+    ultimaCaracteristicaInv = data.caracteristica;
     ultimaPerguntaInv = data.pergunta;
 
     //exibe a pergunta acompanhada da contagem de animais que restam na lógica da IA
@@ -223,7 +225,16 @@ async function responderInvestigador(resposta){
     const res = await fetch("/api/investigador/resposta", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ resposta }),     //envia em formato de dicionario.
+      body: JSON.stringify({
+
+    caracteristica: ultimaCaracteristicaInv,
+
+    mensagem:
+        resposta === true ? "Sim"
+      : resposta === false ? "Não"
+      : "Não sei"
+
+      })     //envia em formato de dicionario.
     });
     const data = await res.json();
 
@@ -231,8 +242,16 @@ async function responderInvestigador(resposta){
   
     // Passa para o turno do Respondedor
     turnoAtual = "respondedor";
-    atualizarTurno();       // Atualiza os controles visuais na tela
-    await buscarPerguntaRespondedor();      // Busca a pergunta que o jogador deve responder
+    atualizarTurno();
+
+    addMsg(
+        "log-respondedor",
+        "system",
+        "RESPONDEDOR",
+        "Faça uma pergunta para tentar descobrir meu animal."
+    );
+
+    document.getElementById("chat-input").focus();      // Busca a pergunta que o jogador deve responder
     // Em caso de erro, avisa o usuário e reabilita os botões para nova tentativa
   } catch(e){
     addMsg("log-investigador", "fail", "ERRO", "Falha ao enviar resposta.");
@@ -325,11 +344,26 @@ async function enviarRespostaRespondedor(){
 
   try {
     //Envia a resposta ao backend de forma assíncrona
-    await fetch("/api/respondedor/resposta", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pergunta: ultimaPerguntaResp, resposta: valor }),    //reenvia o contexto salvo no estado global
+    const res = await fetch("/api/respondedor/resposta", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+
+            mensagem: valor
+
+        })
     });
+
+const data = await res.json();
+
+addMsg(
+    "log-respondedor",
+    "system",
+    "RESPONDEDOR",
+    data.resposta ? "Sim." : "Não."
+);
 
     // Tranferência de Turno para o Investigador
     turnoAtual = "investigador";
