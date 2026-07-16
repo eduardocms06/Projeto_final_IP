@@ -328,6 +328,20 @@ class Partida:
 
     def obter_pergunta_investigador(self):
 
+        if self.ia.quantidade_restante() == 0:
+
+            return {
+
+                "tipo": "fim",
+
+                "mensagem": "Não encontrei nenhum animal compatível com as respostas.",
+
+                "encerrado": True,
+
+                "vencedor": False
+
+            }
+
         # Se já pode dar um palpite
         if self.ia.pode_adivinhar():
 
@@ -349,11 +363,13 @@ class Partida:
 
             return {
 
-                "tipo": "erro",
+                "tipo": "fim",
 
-                "mensagem": "Não encontrei mais perguntas.",
+                "mensagem": "Não consegui formular outra pergunta.",
 
-                "encerrado": False
+                "encerrado": True,
+
+                "vencedor": False
 
             }
 
@@ -436,9 +452,27 @@ class Partida:
 
             }
 
+        animal = self.ia.palpite()
+
+        if animal in self.ia.animais_possiveis:
+
+            self.ia.animais_possiveis.remove(animal)
+
         return {
 
             "vencedor": False,
+
+            "encerrado": False
+
+        }
+    
+    def obter_pergunta_respondedor(self):
+
+        return {
+
+            "tipo": "pergunta",
+
+            "pergunta": "Faça uma pergunta para tentar descobrir meu animal.",
 
             "encerrado": False
 

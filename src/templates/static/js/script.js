@@ -251,7 +251,7 @@ async function responderInvestigador(resposta){
         "Faça uma pergunta para tentar descobrir meu animal."
     );
 
-    document.getElementById("chat-input").focus();      // Busca a pergunta que o jogador deve responder
+    document.getElementById("resp-input").focus();      // Busca a pergunta que o jogador deve responder
     // Em caso de erro, avisa o usuário e reabilita os botões para nova tentativa
   } catch(e){
     addMsg("log-investigador", "fail", "ERRO", "Falha ao enviar resposta.");
