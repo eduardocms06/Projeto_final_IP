@@ -27,112 +27,91 @@ def iniciar():
 
     })
 
+@app.get("/api/investigador/pergunta")
+def pergunta_investigador():
+    return jsonify(
+        partida.obter_pergunta_investigador()
+    )
+
 @app.get("/animais")
 def listar_animais():
 
-    animais = []
+    return jsonify(
 
-    for animal in partida.animais:
+        partida.listar_animais()
 
-        animais.append(
-            animal["nome"]
-        )
-
-    return jsonify(animais)
+    )
 
 @app.post("/escolher-animal")
 def escolher_animal():
 
     dados = request.get_json()
 
-    nome = dados["animal"]
+    return jsonify(
 
-    for animal in partida.animais:
+        partida.escolher_animal(
 
-        if animal["nome"] == nome:
+            dados["animal"]
 
-            partida.jogador.escolher_animal(
-                animal
-            )
+        )
 
-            break
+    )
 
-    return jsonify({
-
-        "status": "ok"
-
-    })
-
-@app.get("/pergunta-ia")
-def pergunta_ia():
-
-    pergunta = partida.ia.escolher_pergunta()
-
-    return jsonify({
-
-        "caracteristica": pergunta,
-
-        "pergunta": partida.caracteristicas[pergunta]
-
-    })
-
-@app.post("/responder-ia")
-def responder_ia():
+@app.post("/api/investigador/resposta")
+def responder_investigador():
 
     dados = request.get_json()
 
-    partida.ia.atualizar_animais(
+    return jsonify(
 
-        dados["caracteristica"],
+        partida.responder_investigador(
 
-        dados["resposta"]
+            dados["caracteristica"],
+
+            dados["mensagem"]
+
+        )
 
     )
 
-    pergunta = partida.ia.escolher_pergunta()
+@app.get("/api/respondedor/pergunta")
+def pergunta_respondedor():
 
-    return jsonify({
+    return jsonify(
 
-        "caracteristica": pergunta,
+        partida.obter_pergunta_respondedor()
 
-        "pergunta": partida.caracteristicas[pergunta],
+    )
 
-        "restantes": partida.ia.quantidade_restante()
-
-    })
-
-@app.post("/mensagem")
-def mensagem():
+@app.post("/api/respondedor/resposta")
+def responder_pergunta():
 
     dados = request.get_json()
 
-    mensagem = dados["mensagem"]
+    return jsonify(
 
-    caracteristica = dados["caracteristica"]
+        partida.responder_pergunta_jogador(
 
-    pergunta = partida.caracteristicas[caracteristica]
+            dados["mensagem"]
 
-    resposta = interpretar_resposta(
-        pergunta,
-        mensagem
+        )
+
     )
 
-    partida.ia.atualizar_animais(
-        caracteristica,
-        resposta
+@app.post("/api/investigador/confirmar_chute")
+def confirmar_chute_investigador():
+
+    dados = request.get_json()
+
+    return jsonify(
+
+        partida.confirmar_chute_investigador(
+
+            dados["correto"]
+
+        )
+
     )
-
-    proxima = partida.ia.escolher_pergunta()
-
-    return jsonify({
-
-        "caracteristica": proxima,
-
-        "pergunta": partida.caracteristicas[proxima],
-
-        "restantes": partida.ia.quantidade_restante()
-
-    })
 
 
 if __name__ == "__main__":

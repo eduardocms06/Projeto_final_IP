@@ -1,6 +1,7 @@
 from src.jogo.ia import IA
 from src.jogo.jogador import Jogador
 from src.agentes.respondedor import pergunta_para_texto
+from src.llm.interpretador_pergunta import interpretar_pergunta
 
 from src.utils.carregador import (
     carregar_animais,
@@ -29,6 +30,8 @@ class Partida:
         self.jogo_finalizado = False
 
         self.estado = "ESCOLHENDO_ANIMAL"
+
+
 
     def mostrar_cabecalho(self):
 
@@ -102,6 +105,28 @@ class Partida:
         for indice, animal in enumerate(self.animais):
 
             print(f"{indice + 1} - {animal['nome']}")
+
+    def escolher_animal(self, nome):
+
+        for animal in self.animais:
+
+            if animal["nome"] == nome:
+
+                self.jogador.escolher_animal(animal)
+
+                return {
+
+                    "status": "ok"
+
+                }
+
+        return {
+
+            "status": "erro",
+
+            "mensagem": "Animal não encontrado."
+
+        }
 
     def escolher_animal_jogador(self):
 
@@ -291,4 +316,130 @@ class Partida:
 
             self.proximo_turno()   
 
+    def listar_animais(self):
+
+        return [
+
+            animal["nome"]
+
+            for animal in self.animais
+
+        ]
+
+    def obter_pergunta_investigador(self):
+
+        # Se já pode dar um palpite
+        if self.ia.pode_adivinhar():
+
+            animal = self.ia.palpite()
+
+            return {
+
+                "tipo": "chute",
+
+                "mensagem": f"Acho que seu animal é {animal['nome']}.",
+
+                "encerrado": False
+
+            }
+
+        pergunta = self.ia.escolher_pergunta()
+
+        if pergunta is None:
+
+            return {
+
+                "tipo": "erro",
+
+                "mensagem": "Não encontrei mais perguntas.",
+
+                "encerrado": False
+
+            }
+
+        return {
+
+            "tipo": "pergunta",
+
+            "pergunta": self.caracteristicas[pergunta],
+
+            "caracteristica": pergunta,
+
+            "restantes": self.ia.quantidade_restante(),
+
+            "encerrado": False
+
+        }
     
+    def responder_investigador(self, caracteristica, mensagem):
+
+        from src.llm.interpretador import interpretar_resposta
+
+        pergunta = self.caracteristicas[caracteristica]
+
+        resposta = interpretar_resposta(
+            pergunta,
+            mensagem
+        )
+
+        self.ia.atualizar_animais(
+            caracteristica,
+            resposta
+        )
+
+        return {
+
+            "restantes": self.ia.quantidade_restante(),
+
+            "encerrado": False
+
+        }
+    
+    def responder_pergunta_jogador(
+        self,
+        mensagem
+    ):
+
+        caracteristica = interpretar_pergunta(
+
+            mensagem,
+
+            self.caracteristicas
+
+        )
+
+        resposta = self.ia.responder(
+
+            caracteristica
+
+        )
+
+        return {
+
+            "caracteristica": caracteristica,
+
+            "resposta": resposta
+
+        }
+    
+    def confirmar_chute_investigador(self, correto):
+
+        if correto:
+
+            self.jogo_finalizado = True
+
+            return {
+
+                "vencedor": True,
+
+                "encerrado": True
+
+            }
+
+        return {
+
+            "vencedor": False,
+
+            "encerrado": False
+
+        }
