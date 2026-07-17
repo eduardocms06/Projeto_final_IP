@@ -84,12 +84,15 @@ async function abrirChat(modalidadeId){
  * os textos e classes de "Ativo" / "Aguarda" nos painéis.
  */
 function atualizarTurno(){
-  const banner     = document.getElementById("turno-texto");
-  const invStatus  = document.getElementById("inv-status");
+  // Os comandos de constantes a seguir buscam os elementos a serem utilizados nas próximas linhas
+  const banner = document.getElementById("turno-texto");
+  const invStatus = document.getElementById("inv-status");
   const respStatus = document.getElementById("resp-status");
-  const btns       = document.getElementById("resposta-btns");
-  const respInput  = document.getElementById("resp-input");
-  const respSend   = document.getElementById("btn-resp-send");
+  const btns = document.getElementById("resposta-btns");
+  const respInput = document.getElementById("resp-input");
+  const respSend = document.getElementById("btn-resp-send");
+  const panelInv = document.getElementById("panel-investigador");
+  const panelResp = document.getElementById("panel-respondedor");
   // 2. Aplica o estado visual do turno do INVESTIGADOR
   if(turnoAtual === "investigador"){
     banner.textContent     = "TURNO: INVESTIGADOR";
@@ -108,6 +111,14 @@ function atualizarTurno(){
     //Bloqueia a barra de digitação do respondedor
     respInput.disabled = true;
     respSend.disabled  = true;
+
+    //Garante que o painel do "Investigador" fique com a classe panel-ativo, adicionando o brilho
+    panelInv.classList.add("panel-ativo");
+    panelInv.classList.remove("panel-inativo");
+
+    // Garante que o painel do "Respondedor" fique somente com a classe panel-inativo adicionando o efeito de opacidade.
+    panelResp.classList.add("panel-inativo");
+    panelResp.classList.remove("panel-ativo");
     //Controla o estado visual do RESPONDEDOR
   } else {
     banner.textContent     = "TURNO: RESPONDEDOR";
@@ -127,6 +138,13 @@ function atualizarTurno(){
     respInput.disabled = false;
     respSend.disabled  = false;
     respInput.focus();
+
+    // Aqui dentro inverte, adiciona panel-ativo no respondedor
+    panelResp.classList.add("panel-ativo");
+    panelResp.classList.remove("panel-inativo");
+    //Remove panel-ativo de Investigador
+    panelInv.classList.add("panel-inativo");
+    panelInv.classList.remove("panel-ativo");
   }
 }
 
