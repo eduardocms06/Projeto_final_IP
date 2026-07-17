@@ -110,58 +110,134 @@ input{ font-family: inherit; }                         /* Força todos os campos
   97%{ opacity:1; }                                   /* Volta ao normal até o fim da animação */
 }
 
-/* ---------- Telas ---------- */
-.screen{ position:fixed; inset:0; display:none; flex-direction:column; animation:flicker 6s infinite; }
+/* Classe usada como base para todas as paginas */
+.screen{ position:fixed;                              /* Fixa a tela cobrindo toda a janela do navegador */
+  inset:0; 
+  display:none;                                       /* Esconde as telas */
+  flex-direction:column;                              /* Organiza os elementos da tela de cima para baixo em colunas. */
+  animation:flicker 6s infinite; }                    /* Aplica animação de piscar de forma lenta e infinita */
+
+/* Quando no JavaScript é chamado a classe "active" a tela aparece */  
 .screen.active{ display:flex; }
 
-/* ================= HOME ================= */
-#screen-home{ align-items:center; justify-content:center; text-align:center; }
+/* estilos específicos para a TELA INICIAL */
+#screen-home{ 
+  align-items:center;                                 /* Centraliza os conteúdos verticalmente */
+  justify-content:center;                             /* Centaliza os conteúdos horizontalmente */
+  text-align:center; }                                /* Centraliza o alinhamento dos textos em si */
+
+/* Efeito visual de luz difusa no centro da tela*/
 .vignette{
   position:absolute; inset:0;
+  /* Cria um círculo transparente no centro que some ao chegar em 60% da tela. */
   background:radial-gradient(ellipse at center, rgba(255,176,0,0.06) 0%, transparent 60%);
   pointer-events:none;
 }
+/* Agrupa e limita a largura do conteúdo da tela home */
 .home-wrap{ position:relative; max-width:640px; padding:40px 32px; z-index:2; }
 .title-main{
-  font-family:var(--font-display);
+  font-family:var(--font-display);                    /* Usa a fonte especial definida no :root (Special Elite) */
+
+  /* determina um tamanho fluído de no mínimo 2.4rem, idealmente 7% da largura da tela, no máximo 4rem */
   font-size:clamp(2.4rem,7vw,4rem);
+
+  /*Configurações gerais da fonte, como cor, margem, espaçamento das letras...*/
   color:var(--amber-bright); margin:0 0 20px; letter-spacing:2px;
-  text-shadow:0 0 18px rgba(255,176,0,0.55),0 0 2px rgba(255,209,102,0.8);
+  text-shadow:0 0 18px rgba(255,176,0,0.55),0 0 2px rgba(255,209,102,0.8);      /*Cria o efeito de "Glow" (Brilho)*/
 }
+/* O cursor no final de um texto estilo terminal */
 .blink-cursor{ display:inline-block; animation:blink 1s steps(1) infinite; color:var(--amber); }
+/* Animação do cursor deixando ele piscando. */
 @keyframes blink{ 50%{ opacity:0; } }
-.home-actions{ display:flex; flex-direction:column; gap:14px; max-width:380px; margin:0 auto 40px; }
+/* Agrupa os botões do menu inicial*/
+.home-actions{ 
+  display:flex; 
+  flex-direction:column;                              /* Empilha os botões verticalmente */
+  gap:14px;                                           /* Cria um espaço de 14px entre cada botão */
+  max-width:380px;                                    /* Tamanho máximo que um botão pode ter */
+  margin:0 auto 40px; }
 
 .btn{
-  display:flex; align-items:center; gap:14px; width:100%;
-  background:var(--paper); border:1px solid var(--line); color:var(--amber);
-  padding:16px 20px; font-size:1rem; letter-spacing:2px; text-align:left;
+  display:flex;                                       /* Transforma o botão em um Flexbox para alinhar os itens internos */
+  align-items:center;                                 /* Centraliza os textos e ícones dentro do botão verticalmente */
+  gap:14px;                                           /* Espaçamento interno entre os elementos do botão */
+  width:100%;                                         /* Ocupa toda a largura disponível da "caixa" principal*/
+
+  background:var(--paper);                            /* Cor de fundo definida pela variável --paper*/
+  border:1px solid var(--line);                       /* Borda fina com a cor de linha padrão */
+  color:var(--amber);
+  padding:16px 20px;                                  /* Espaçamento interno para deixar o botão "gordinho" e clicável */
+  font-size:1rem; 
+  letter-spacing:2px; 
+  text-align:left;
+  /* Suaviza a troca de cor / animação ao interagir com o botão*/
   transition:background 0.15s, border-color 0.15s, transform 0.1s, box-shadow 0.15s;
 }
-.btn:hover{ background:var(--paper-raised); border-color:var(--amber-dim); box-shadow:0 0 16px rgba(255,176,0,0.15); transform:translateX(2px); }
-.btn:active{ transform:translateX(0) scale(0.99); }
-.btn:focus-visible{ outline:2px solid var(--amber-bright); outline-offset:2px; }
-.btn-index{ font-size:0.75rem; color:var(--amber-dim); border:1px solid var(--amber-dim); padding:2px 7px; }
-.btn-label{ flex:1; font-weight:bold; }
-.btn-arrow{ color:var(--amber-dim); }
-.btn-danger:hover{ border-color:var(--danger); box-shadow:0 0 16px rgba(194,59,46,0.2); }
-.btn-danger .btn-index{ color:var(--danger); border-color:var(--danger); }
-.btn-danger:hover .btn-label{ color:var(--danger-bright); }
-.footer-note{ font-size:0.7rem; color:var(--text-dim); letter-spacing:1px; }
+/* Controla o efeito do mouse quando passa por cima */
+.btn:hover{ 
+  background:var(--paper-raised); 
+  border-color:var(--amber-dim); 
+  box-shadow:0 0 16px rgba(255,176,0,0.15); 
+  transform:translateX(2px); }
+
+/* Controla o momento quando o usuário cllica*/
+.btn:active{ 
+  transform:translateX(0) scale(0.99); }
+
+  /* Visibilidade do teclado ao clicar */
+.btn:focus-visible{ 
+  outline:2px solid var(--amber-bright); outline-offset:2px; }
+
+/*Numero indicador à esquerda do botão. */
+.btn-index{ font-size:0.75rem; 
+  color:var(--amber-dim); 
+  border:1px solid var(--amber-dim); 
+  padding:2px 7px; }
+/* Texto principal do botão*/
+.btn-label{ 
+  flex:1; 
+  font-weight:bold; }
+  /* ícone de seta*/
+.btn-arrow{ 
+  color:var(--amber-dim); }
+  /* Altera Botão de saída/ perigo ao passar o mouse.*/
+.btn-danger:hover{ 
+  border-color:var(--danger); 
+  box-shadow:0 0 16px rgba(194,59,46,0.2); }
+
+/* Muda as cores para um vermelho mais forte*/
+.btn-danger .btn-index{ 
+  color:var(--danger); 
+  border-color:var(--danger); }
+
+  /* Acende o texto para vermelho brilhante ao passar o mouse */
+.btn-danger:hover .btn-label{ 
+  color:var(--danger-bright); }
+/* Textos de rodapé*/
+.footer-note{ 
+  font-size:0.7rem; 
+  color:var(--text-dim); 
+  letter-spacing:1px; }
+  /* Estilização para bolinha de status*/
 .status-dot{
-  display:inline-block; width:7px; height:7px; border-radius:50%;
+  display:inline-block; 
+  width:7px; height:7px; 
+  border-radius:50%;
   background:var(--ok); box-shadow:0 0 6px var(--ok); animation:pulse 1.6s ease-in-out infinite;
 }
+/* Cria efeito de pulsar da bolinha verde de status */
 @keyframes pulse{ 50%{ opacity:0.4; } }
 
-/* ================= TOPBAR ================= */
+/* Barra superior de título */
 .topbar{
   display:flex; align-items:center; justify-content:space-between;
   padding:18px 26px; border-bottom:1px solid var(--line);
   background:linear-gradient(to bottom, var(--paper), var(--void));
-  flex-shrink:0;
+  flex-shrink:0;                                      /* Impede da barra ser "esmagada" se houver muitos itens na tela*/
 }
+/* Título da barra superior */
 .topbar-title{ flex:1; text-align:center; font-family:var(--font-display); font-size:1.1rem; letter-spacing:3px; color:var(--amber-bright); margin:0; }
+/* Identificador d*/
 .topbar-id{ font-size:0.75rem; color:var(--text-dim); letter-spacing:1px; }
 .btn-back{
   background:transparent; border:1px solid var(--line); color:var(--text-dim);
@@ -215,7 +291,23 @@ input{ font-family: inherit; }                         /* Força todos os campos
   background:var(--paper); min-height:0;
   overflow:hidden;
 }
-
+/* Painel de transição, ocorre a mudança de chat de forma suavizada chat-panel e panel-ativo */
+.chat-panel{
+  transition: box-shadow 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+/* Aplica-se quando o elemento possui as duas classes ao mesmo tempo */
+.chat-panel.panel-ativo{
+  border-color: var(--amber-bright);                  /* Troca a cor da borda para o âmbar mais claro destacando o painel */
+  /* O bloco a seguir adiciona duas "sombras" uma interna e outra externa. */
+  box-shadow:
+    0 0 24px rgba(255,176,0,0.28),
+    inset 0 0 40px rgba(255,176,0,0.05);
+}
+  /* O bloco a seguir abaixa a opacidade do lado que está em espera e diminui o saturamento da cor. */
+.chat-panel.panel-inativo{
+  opacity: 0.5;
+  filter: grayscale(25%);
+}
 /* Cabeçalho do painel */
 .panel-header{
   display:flex; align-items:center; gap:10px;
