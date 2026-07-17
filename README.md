@@ -9,9 +9,9 @@ O projeto utiliza um modelo de linguagem local. Siga os passos abaixo:
 ```bash
    ollama --version
 ```
-3. Novamente no CMD baixe a versão 3 do Ollama digitando:
+3. Novamente no CMD baixe a versão 3.1 do Ollama digitando:
 ```bash
-   ollama pull llama3
+   ollama pull llama3.1
 ```
 ### 2. Rodando o projeto
 Com o Ollama configurado clone este repositório e instale as dependências.
